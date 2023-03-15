@@ -428,9 +428,7 @@ namespace CommonApplicationFramework.DataHandling
         public bool SynchronizeWithRedisConnectionInfo(string key)
         {
             string dbConnectionString = string.Empty;
-            //string query = "SELECT [Id],[CompanyName],[Code],[DBServerName],[DBName],[DBUserName],[DBPassword] FROM [dbo].[Company]";
-            //string query = "SELECT mo.[Id], mo.[Name], mo.[Code], comMod.[DBServerName], comMod.[DBName], comMod.[DBUserName], comMod.[DBPassword] FROM CompanyModule AS comMod JOIN Module AS mo ON comMod.ModuleId = mo.Id";
-            string query = "SELECT commod.ConnectionId as ConnectionId, mo.[Id], mo.[Name], mo.[Code], comMod.[DBServerName], comMod.[DBName], comMod.[DBUserName], comMod.[DBPassword] FROM CompanyModule AS comMod JOIN Module AS mo ON comMod.ModuleId = mo.Id";
+            string query = "SELECT commod.ConnectionId as ConnectionId, 0 as [Id], '' [Name], '' [Code], comMod.[DBServerName], comMod.[DBName], comMod.[DBUserName], comMod.[DBPassword] FROM CompanyApps AS comMod";
             //GetCacheConnection();
             var config = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
             this.strConnection = DBSServers.DBServerList.Find(x => x.Name.Equals(config.Build().GetSection("HostName").Value)).ConnectionString;

@@ -3,6 +3,16 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Authors>Pentechs.$(AssemblyName)</Authors>
+    <Description>A common application framework for .net application for interneal usage.
+This is a private package hence user need to be authenticated to download and install the package.
+To authorize user must have access to the git repository, if not user need to inform to the administrator of gain access to the repository.
+While install user will be asked to provide git credentials , the username will be git user name and password will be PAT token (classic) in git , which can be created Setting/Developer Settings in git.
+Report to Joy incase any issue. </Description>
+    <Copyright>This project is copyright</Copyright>
+    <PackageProjectUrl>https://github.com/PeninsulaGroup/CommonApplicationFrameWork_Core</PackageProjectUrl>
+    <Version>1.0.3$(VersionPrefix)</Version>
+    <Company>$(Authors)</Company>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -14,6 +24,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="2.1.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.1.1" />
+    <PackageReference Include="StackExchange.Redis" Version="2.6.96" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
     <PackageReference Include="System.Data.Odbc" Version="6.0.0" />
     <PackageReference Include="System.Data.OleDb" Version="6.0.0" />
@@ -22,15 +33,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="Microsoft.Owin.Security">
-      <HintPath>..\..\..\..\Packages\Owin.3.0.1\Microsoft.Owin.Security.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Security.OAuth">
-      <HintPath>..\..\..\..\Packages\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
-    </Reference>
-    <Reference Include="StackExchange.Redis">
-      <HintPath>packages\StackExchange.Redis.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http.Formatting">
       <HintPath>..\..\..\Packages\CAF 1.0.0.1\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
